@@ -3,85 +3,97 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>이용약관 및 개인정보처리방침 | Discord Bot</title>
+<title>이용약관 및 개인정보처리방침 | BOT.CONSOLE</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJCT1QuQ09OU09MRSI+CiAgPHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjU2IiBoZWlnaHQ9IjU2IiByeD0iMTciIGZpbGw9IiNhOTMxMmYiLz4KICA8cGF0aCBkPSJNMjMgMjIuNSAzNSAzMiAyMyA0MS41IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iNS4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8cmVjdCB4PSIzOC41IiB5PSIzOC44IiB3aWR0aD0iMTAuNSIgaGVpZ2h0PSI1LjIiIHJ4PSIyLjYiIGZpbGw9IiNmZmYiLz4KPC9zdmc+Cg==">
+<meta name="theme-color" content="#a9312f">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f4f5fa;--card:#fff;--ink:#12141f;--mute:#586074;--line:#e4e7f0;--acc:#5865f2;--acc2:#7c5cff;--accbg:#eef0ff;--ok:#0f9d6b;--okbg:#e8f8f1;--no:#d92d4a;--nobg:#fdecef;--warn:#b25e09;--warnbg:#fff5e6;--shadow:0 1px 2px rgba(20,24,60,.05),0 12px 32px -12px rgba(20,24,60,.12);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0c12;--card:#14161f;--ink:#eceef6;--mute:#9ba3b8;--line:#252938;--acc:#8c95ff;--accbg:#1b1e3b;--ok:#3ddc9b;--okbg:#0f2a21;--no:#ff7a90;--nobg:#2c1219;--warn:#ffb45c;--warnbg:#2b2012;--shadow:0 12px 32px -12px rgba(0,0,0,.6);color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0b0c12;--card:#14161f;--ink:#eceef6;--mute:#9ba3b8;--line:#252938;--acc:#8c95ff;--accbg:#1b1e3b;--ok:#3ddc9b;--okbg:#0f2a21;--no:#ff7a90;--nobg:#2c1219;--warn:#ffb45c;--warnbg:#2b2012;--shadow:0 12px 32px -12px rgba(0,0,0,.6);color-scheme:dark}
+:root{--bg:#f7f5f3;--card:#fff;--ink:#1a1a1a;--mute:#6f6964;--line:#e6e2de;--soft:#f7f5f3;--acc:#a9312f;--accH:#8e2725;--accbg:#f7f5f3;--ok:#13795b;--okbg:#eef7f2;--no:#a9312f;--nobg:#fbeceb;--warn:#9a5b00;--warnbg:#fff4e3;--sh:0 4px 14px rgba(0,0,0,.05);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#131111;--card:#1c1918;--ink:#f2eeea;--mute:#a39c96;--line:#2c2826;--soft:#1c1918;--acc:#d0493f;--accH:#e0584e;--accbg:#231f1e;--ok:#4fd1a1;--okbg:#10241d;--no:#ff8a80;--nobg:#2a1514;--warn:#ffc266;--warnbg:#2a2010;--sh:0 4px 14px rgba(0,0,0,.4);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#131111;--card:#1c1918;--ink:#f2eeea;--mute:#a39c96;--line:#2c2826;--soft:#1c1918;--acc:#d0493f;--accH:#e0584e;--accbg:#231f1e;--ok:#4fd1a1;--okbg:#10241d;--no:#ff8a80;--nobg:#2a1514;--warn:#ffc266;--warnbg:#2a2010;--sh:0 4px 14px rgba(0,0,0,.4);color-scheme:dark}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 84px)}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 15.5px/1.9 'Noto Sans KR','Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;word-break:keep-all;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.85 "Pretendard","Noto Sans KR",system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif;word-break:keep-all;-webkit-font-smoothing:antialiased}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--card);z-index:30}
-#prog{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;width:0;background:linear-gradient(90deg,var(--acc),var(--acc2));z-index:40}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--card) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.bar{max-width:1180px;margin:auto;padding:0 24px;height:62px;display:flex;align-items:center;gap:16px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:17px;letter-spacing:-.02em;margin-right:auto}
-.logo{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--acc),var(--acc2));display:grid;place-items:center;color:#fff;font-size:16px}
-nav{display:flex;gap:4px;background:var(--bg);padding:4px;border-radius:12px}nav a{padding:7px 16px;border-radius:9px;color:var(--mute);text-decoration:none;font-weight:500;font-size:14px;transition:.2s}
-nav a[aria-current=true]{background:var(--card);color:var(--acc);font-weight:700;box-shadow:var(--shadow)}
-.ib{border:1px solid var(--line);background:var(--card);color:var(--ink);width:38px;height:38px;border-radius:10px;cursor:pointer;font-size:16px}
-.hero{background:#0d0f1f;color:#fff;position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;width:640px;height:640px;right:-160px;top:-280px;background:radial-gradient(closest-side,rgba(124,92,255,.55),transparent);pointer-events:none}
-.hero::after{content:"";position:absolute;width:520px;height:520px;left:-200px;bottom:-320px;background:radial-gradient(closest-side,rgba(88,101,242,.4),transparent);pointer-events:none}
-.hi{max-width:1180px;margin:auto;padding:72px 24px 64px;position:relative;z-index:1}
-.pill{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);padding:6px 14px;border-radius:99px;font-size:13px;color:#c9cdf5}
-.hero h1{font-size:clamp(34px,6vw,60px);line-height:1.2;letter-spacing:-.035em;font-weight:900;margin:22px 0 18px}
-.hero p{max-width:620px;color:#b4b9d6;margin:0;font-size:16.5px}
-.sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:40px}
-.sum div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px 20px;backdrop-filter:blur(6px)}
-.sum b{display:block;font-size:15px;margin-bottom:4px;color:#fff}.sum span{font-size:13.5px;color:#aeb3d3;line-height:1.6;display:block}
-.wrap{max-width:1180px;margin:-28px auto 0;padding:0 24px 80px;display:grid;grid-template-columns:240px 1fr;gap:36px;align-items:start;position:relative;z-index:2}
-aside{position:sticky;top:calc(env(safe-area-inset-top,0px) + 86px);background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:var(--shadow);max-height:calc(100vh - 120px);overflow:auto}
-aside small{display:block;padding:4px 10px 8px;color:var(--mute);font-size:12px;font-weight:700}
-aside a{display:block;padding:7px 12px;border-radius:9px;color:var(--mute);text-decoration:none;font-size:13.5px;line-height:1.5;transition:.15s}
-aside a:hover{background:var(--bg)}aside a.on{background:var(--accbg);color:var(--acc);font-weight:700}
+#prog{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;width:0;background:var(--acc);z-index:40;border-radius:0 3px 3px 0}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--card);border-bottom:1px solid var(--line);transition:box-shadow .25s}
+.top.scrolled{box-shadow:0 6px 20px rgba(0,0,0,.07)}
+.top-in{max-width:1080px;margin:0 auto;padding:0 20px;height:60px;display:flex;align-items:center;gap:28px}
+.logo{display:inline-flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.16em;font-size:.95rem;color:var(--ink);text-decoration:none}
+.logo b{color:var(--acc)}.lg{width:32px;height:32px;flex:none;display:block;transition:transform .45s cubic-bezier(.2,1.6,.4,1)}.logo:hover .lg{transform:rotate(-8deg) scale(1.08)}
+nav{display:flex;gap:22px;flex:1}
+nav a{font-size:.8rem;letter-spacing:.08em;font-weight:700;color:var(--ink);text-decoration:none;opacity:.6;padding:6px 0}
+nav a:hover{opacity:1;color:var(--acc)}nav a[aria-current=true]{opacity:1;color:var(--acc)}
+.ib{margin-left:auto;display:inline-flex;align-items:center;padding:8px 16px;border-radius:999px;border:1px solid var(--ink);background:var(--card);color:var(--ink);font:700 .8rem "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.03em;cursor:pointer;transition:background .15s,color .15s,transform .3s cubic-bezier(.2,1.6,.4,1)}
+.ib:hover{background:var(--ink);color:var(--card);transform:translateY(-1px)}.ib:active{transform:scale(.96)}
+.hero{background:var(--soft);border-bottom:1px solid var(--line);border-radius:0 0 32px 32px}
+.hi{max-width:1080px;margin:0 auto;padding:64px 20px 48px}
+.hi>*{animation:fadeUp .8s cubic-bezier(.2,.7,.2,1) backwards}.hi>:nth-child(2){animation-delay:.08s}.hi>:nth-child(3){animation-delay:.16s}.hi>:nth-child(4){animation-delay:.24s}.hi>:nth-child(5){animation-delay:.32s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}}
+.eyebrow{font-size:.75rem;letter-spacing:.24em;font-weight:700;color:var(--acc);text-transform:uppercase;margin:0}
+.hero h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.15;margin:14px 0;font-weight:800;letter-spacing:-.02em}
+.hero p.lead{max-width:640px;color:var(--mute);margin:0;font-size:1.02rem}
+.meta{display:flex;flex-wrap:wrap;gap:8px 32px;margin:24px 0 0;padding:0;font-size:.86rem;color:var(--mute)}
+.meta b{color:var(--ink);font-weight:700;margin-left:8px}
+.sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:36px}
+.sum div{padding:20px 22px;border-radius:22px;background:var(--card);border:1px solid var(--line);box-shadow:var(--sh)}
+.sum b{display:block;font-size:1rem;margin-bottom:6px;font-weight:800}.sum span{font-size:.86rem;color:var(--mute);line-height:1.65;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:44px 20px 80px;display:grid;grid-template-columns:220px 1fr;gap:36px;align-items:start}
+aside{position:sticky;top:calc(env(safe-area-inset-top,0px) + 84px);padding:12px;background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--sh);max-height:calc(100vh - 120px);overflow:auto}
+aside small{display:block;padding:2px 14px 10px;color:var(--acc);font-size:.75rem;font-weight:800;letter-spacing:.2em}
+aside a{display:block;padding:7px 14px;border-radius:12px;color:var(--mute);text-decoration:none;font-size:.86rem;line-height:1.5;transition:background .15s,color .15s}
+aside a:hover{background:var(--soft);color:var(--ink)}aside a.on{background:var(--soft);color:var(--acc);font-weight:700}
 main{min-width:0}.doc{display:none}.doc.show{display:block}
-section{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:34px 40px;margin-bottom:18px;box-shadow:var(--shadow)}
-h2{font-size:21px;letter-spacing:-.02em;font-weight:800;margin:0 0 16px;display:flex;align-items:center;gap:12px}
-h2 em{font-style:normal;flex:none;min-width:34px;height:34px;padding:0 10px;border-radius:10px;background:var(--accbg);color:var(--acc);font-size:14px;font-weight:700;display:grid;place-items:center}
-h3{font-size:15.5px;margin:22px 0 6px;font-weight:700}
-p,li{color:var(--mute);margin:0 0 10px}ul,ol{padding-left:22px;margin:0 0 12px}li::marker{color:var(--acc)}b{color:var(--ink)}
-.box{border-radius:14px;padding:18px 22px;margin:16px 0;background:var(--accbg)}.box>:last-child{margin-bottom:0}
+section{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:34px 42px;margin-bottom:18px;box-shadow:var(--sh)}
+h2{font-size:1.3rem;letter-spacing:-.01em;font-weight:800;margin:0 0 18px;padding-bottom:14px;border-bottom:1px solid var(--ink);display:flex;align-items:baseline;gap:14px}
+h2 em{font-style:normal;flex:none;color:var(--acc);font-size:.8rem;font-weight:800;letter-spacing:.06em}
+h3{font-size:1rem;margin:22px 0 6px;font-weight:700}
+p,li{color:var(--mute);margin:0 0 10px}ul,ol{padding-left:20px;margin:0 0 12px}li::marker{color:var(--acc)}b{color:var(--ink);font-weight:700}
+.box{border-radius:18px;padding:18px 24px;margin:16px 0;background:var(--soft)}.box>:last-child{margin-bottom:0}
 .box.warn{background:var(--warnbg)}.box.warn>b:first-child,.box.warn p:first-child b{color:var(--warn)}
-.box.ok{background:var(--okbg)}.box.no{background:var(--nobg)}
-.tri{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-bottom:18px}
-.tri div{border-radius:16px;padding:20px 22px;border:1px solid var(--line);background:var(--card);box-shadow:var(--shadow)}
-.tri h4{margin:0 0 8px;font-size:15px;display:flex;gap:8px;align-items:center}.tri ul{margin:0;padding-left:18px}.tri li{font-size:14px;margin-bottom:4px}
-.tri .a{border-top:4px solid var(--ok)}.tri .b{border-top:4px solid var(--no)}.tri .c{border-top:4px solid var(--acc)}
-.tw{overflow-x:auto;margin:14px 0 18px;border:1px solid var(--line);border-radius:14px}
-table{border-collapse:collapse;width:100%;min-width:600px;font-size:14px;line-height:1.7}
+.box.ok{background:var(--okbg)}.box.no{background:var(--nobg)}.box.no p:first-child b{color:var(--no)}
+.tri{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-bottom:18px}
+.tri div{border-radius:22px;padding:22px 24px;border:1px solid var(--line);border-top:4px solid var(--line);background:var(--card);box-shadow:var(--sh)}
+.tri h4{margin:0 0 10px;font-size:1rem;font-weight:800}.tri ul{margin:0;padding-left:18px}.tri li{font-size:.9rem;margin-bottom:4px}
+.tri .a{border-top-color:var(--ok)}.tri .b{border-top-color:var(--no)}.tri .c{border-top-color:var(--ink)}
+.tw{overflow-x:auto;margin:14px 0 18px;border:1px solid var(--line);border-radius:18px}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:.9rem;line-height:1.7}
 th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--mute)}
-th{background:var(--bg);color:var(--ink);font-weight:700;white-space:nowrap}tr:last-child td{border:0}td:first-child{color:var(--ink);font-weight:500;white-space:nowrap}
-code{background:var(--bg);border:1px solid var(--line);padding:1px 7px;border-radius:6px;font-size:13px;color:var(--ink)}
-details{border:1px solid var(--line);border-radius:14px;padding:0 20px;margin-bottom:10px;background:var(--card)}
+th{background:var(--soft);color:var(--ink);font-weight:700;white-space:nowrap}tr:last-child td{border:0}td:first-child{color:var(--ink);font-weight:600;white-space:nowrap}
+code{background:var(--soft);border:1px solid var(--line);padding:1px 8px;border-radius:8px;font-size:.84rem;color:var(--ink)}
+details{border:1px solid var(--line);border-radius:18px;padding:0 22px;margin-bottom:10px;background:var(--card)}
 summary{cursor:pointer;padding:15px 0;font-weight:700;color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:12px}
-summary::-webkit-details-marker{display:none}summary::after{content:"+";color:var(--acc);font-size:20px;line-height:1.4;transition:transform .2s}details[open] summary::after{transform:rotate(45deg)}
+summary::-webkit-details-marker{display:none}summary::after{content:"+";color:var(--acc);font-size:20px;line-height:1.4}details[open] summary::after{content:"\2212"}
 details p{padding-bottom:6px}
-footer{max-width:1180px;margin:0 auto;padding:0 24px 64px;color:var(--mute);font-size:13px;text-align:center;line-height:1.9}footer a{color:var(--acc)}
+footer{border-top:1px solid var(--line);background:var(--card)}
+.fi{max-width:1080px;margin:0 auto;padding:32px 20px 44px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;color:var(--mute);font-size:.8rem;line-height:1.9}
+.fi .logo{font-size:.9rem}footer a{color:var(--acc)}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
-@media(max-width:920px){.wrap{grid-template-columns:1fr}aside{display:none}section{padding:26px 22px}.hi{padding-top:48px}}
-@media(max-width:560px){.bar{padding:0 14px}.brand span{display:none}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-@media print{header,aside,#prog,.hero::before,.hero::after{display:none}.hero{background:none;color:#000}.hero h1,.sum b{color:#000}.doc{display:block!important}section{box-shadow:none;break-inside:avoid}}
+@media(max-width:920px){.wrap{grid-template-columns:1fr;padding-top:28px}aside{display:none}section{padding:26px 22px}.hi{padding-top:44px}}
+@media(max-width:640px){nav{display:none}.top-in{gap:12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+@media print{.top,aside,#prog{display:none}.hero{background:none}.doc{display:block!important}section{box-shadow:none;break-inside:avoid}}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="lg" viewBox="0 0 64 64"><rect x="4" y="4" width="56" height="56" rx="17" style="fill:var(--acc)"/><path d="M23 22.5 35 32 23 41.5" fill="none" stroke="#fff" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="38.5" y="38.8" width="10.5" height="5.2" rx="2.6" fill="#fff"/></symbol></svg>
 <div id="prog"></div>
-<header><div class="bar"><div class="brand"><div class="logo">🤖</div><span>Discord Bot 약관 센터</span></div>
+<header class="top"><div class="top-in"><a class="logo" href="#terms" aria-label="BOT.CONSOLE 약관"><svg class="lg" viewBox="0 0 64 64" aria-hidden="true"><use href="#lg"/></svg><span>BOT<b>.</b>CONSOLE</span></a>
 <nav><a href="#terms" id="n-t">이용약관</a><a href="#privacy" id="n-p">개인정보처리방침</a></nav>
-<button class="ib" id="th" aria-label="테마 전환">🌓</button></div></header>
+<button class="ib" id="th" aria-label="테마 전환">테마 전환</button></div></header>
 
 <div class="hero"><div class="hi">
-<span class="pill">📜 시행일 2026. 11. 26 · 이전 버전 2026. 02. 07</span>
+<p class="eyebrow">Terms &amp; Privacy</p>
 <h1 id="ttl">이용약관</h1>
-<p id="sub"></p>
+<p class="lead" id="sub"></p>
+<dl class="meta"><div>시행일<b>2026. 11. 26</b></div><div>이전 버전<b>2026. 02. 07</b></div><div>운영자<b>kimminseo</b></div></dl>
 <div class="sum" id="sumbox"></div>
 </div></div>
 
 <div class="wrap"><aside id="toc" aria-label="목차"></aside><main>
 
-<!-- ══════════ 이용약관 ══════════ -->
+<!-- 이용약관 -->
 <div class="doc" id="d-t">
 <section><h2 id="t1"><em>제1조</em>목적과 정의</h2>
 <p>이 약관은 운영자(개발자 kimminseo, 이하 “운영자”)가 Discord 플랫폼에서 제공하는 Discord Bot(이하 “봇”)의 이용 조건, 운영자와 이용자의 권리·의무 및 책임 사항을 정하는 것을 목적으로 합니다.</p>
@@ -92,7 +104,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 
 <section><h2 id="t2"><em>제2조</em>약관의 효력과 변경</h2>
 <p>봇을 서버에 초대하거나 명령어를 사용하면 이 약관과 <b>Discord 이용약관(Terms of Service)·Developer Policy</b>에 동의한 것으로 봅니다. 두 문서가 충돌하면 Discord의 정책을 우선합니다.</p>
-<p>약관을 바꿀 때는 시행 <b>7일 전</b>(이용자에게 불리한 변경은 <b>30일 전</b>)에 공지 채널 또는 이 페이지로 알립니다. 변경 후에도 계속 이용하면 동의한 것으로 보며, 동의하지 않으면 이용을 중단하고 봇을 서버에서 내보내 주세요.</p></section>
+<p>약관을 바꿀 때는 시행 <b>7일 전</b>(이용자에게 불리한 변경은 <b>30일 전</b>)에 공지 채널 또는 이 페이지로 알립니다. 변경 후에도 계속 이용하면 동의한 것으로 보며, 동의하지 않는 경우 이용을 중단하고 봇을 서버에서 제거하여 주시기 바랍니다.</p></section>
 
 <section><h2 id="t3"><em>제3조</em>제공 서비스</h2>
 <div class="tw"><table><tr><th>분류</th><th>주요 기능</th></tr>
@@ -106,10 +118,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 <tr><td>편의 기능</td><td>급식 조회, 생일, 리마인더, 투표, 팀 나누기, 뽑기</td></tr>
 <tr><td>상태 페이지</td><td>봇 가동 상태와 사고 이력을 공개 페이지로 제공</td></tr>
 <tr><td>웹 콘솔</td><td>허가된 관리자의 웹 기반 봇 관리</td></tr></table></div>
-<p>운영자는 기능을 추가·변경·중단할 수 있으며, 이용자에게 큰 영향이 있는 변경은 미리 알립니다. 점검, 천재지변, 외부 서비스(Discord, Riot, AI 제공사 등)의 장애로 서비스가 중단되거나 느려질 수 있습니다.</p></section>
+<p>운영자는 기능을 추가·변경·중단할 수 있으며, 이용자에게 큰 영향이 있는 변경은 미리 알립니다. 점검, 천재지변, 외부 서비스(Discord, Riot, AI 제공사 등)의 장애로 서비스가 중단되거나 지연될 수 있습니다.</p></section>
 
 <section><h2 id="t4"><em>제4조</em>이용자의 의무</h2>
-<p>이용자는 관련 법령, Discord 정책, 이 약관, 서버 규칙을 지켜야 합니다. 특히 다음을 지켜 주세요.</p>
+<p>이용자는 관련 법령, Discord 정책, 이 약관, 서버 규칙을 준수해야 합니다. 특히 다음 사항을 지켜 주시기 바랍니다.</p>
 <ul><li>봇의 명령어는 정해진 목적과 방법으로만 사용합니다.</li>
 <li>서비스에 오류나 보안 취약점을 발견하면 악용하지 말고 운영자에게 즉시 알립니다.</li>
 <li>자신의 계정, 토큰, 연동 정보를 스스로 안전하게 관리합니다.</li>
@@ -134,8 +146,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 <li>괴롭힘, 혐오 표현, 불법 촬영물, 성적·폭력적 콘텐츠를 봇으로 퍼뜨리는 행위</li></ul></div></section>
 
 <section><h2 id="t6"><em>제6조</em>서버 관리자의 책임</h2>
-<p>서버 관리자가 로그, 초대 추적, 티켓 기록, 환영 메시지 같은 기능을 켜면 그 서버 구성원의 정보가 처리됩니다. 관리자는 구성원에게 이 사실을 알려야 하고, 기능으로 얻은 정보를 법령과 서버 목적에 맞게만 써야 합니다. 얻은 정보를 외부에 공개하거나 목적 외로 쓰면 안 됩니다.</p>
-<p>관리자가 설정한 내용으로 생긴 문제에 대해서는 운영자가 책임지지 않습니다. 관리자는 봇이 일하는 데 필요한 최소 권한(서버 관리, 메시지 관리 등)만 부여해 주세요.</p></section>
+<p>서버 관리자가 로그, 초대 추적, 티켓 기록, 환영 메시지 같은 기능을 켜면 그 서버 구성원의 정보가 처리됩니다. 관리자는 구성원에게 이 사실을 알려야 하고, 기능으로 얻은 정보를 법령과 서버 목적에 맞게만 사용해야 합니다. 얻은 정보를 외부에 공개하거나 목적 외로 사용해서는 안 됩니다.</p>
+<p>관리자가 설정한 내용으로 생긴 문제에 대해서는 운영자가 책임지지 않습니다. 관리자는 봇이 작동하는 데 필요한 최소 권한(서버 관리, 메시지 관리 등)만 부여해 주시기 바랍니다.</p></section>
 
 <section><h2 id="t7"><em>제7조</em>가상 재화와 이용자 콘텐츠</h2>
 <ul><li>코인 등 가상 재화는 재산적 가치가 없는 서비스 내 데이터입니다. 환불, 현금화, 양도(허용된 기능 제외)를 할 수 없습니다.</li>
@@ -144,7 +156,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 <li>이용자가 입력한 질문, 메모, 닉네임 등의 권리는 이용자에게 있으며, 운영자는 서비스 제공에 필요한 범위에서만 처리합니다.</li></ul></section>
 
 <section><h2 id="t8"><em>제8조</em>AI 기능과 외부 서비스</h2>
-<ul><li><b>AI 답변</b>은 외부 AI 서비스가 만들며 부정확하거나 오래된 내용일 수 있습니다. 시험, 의료, 법률, 금융 같은 중요한 판단의 근거로 삼지 마세요.</li>
+<ul><li><b>AI 답변</b>은 외부 AI 서비스가 생성하며 부정확하거나 오래된 내용일 수 있습니다. 시험, 의료, 법률, 금융 같은 중요한 판단의 근거로 삼지 마시기 바랍니다.</li>
 <li><b>라이엇 계정 연동</b>은 이용자가 직접 선택하는 기능이며 <b>QR 로그인으로만</b> 이루어집니다. 모바일 라이엇 앱에서 본인이 직접 승인해야 하며, 연동에 따른 라이엇 정책상 불이익은 이용자 본인이 부담합니다.</li>
 <li><b>전적·급식 등</b> 외부 데이터는 제공처의 사정으로 늦거나 틀릴 수 있습니다.</li>
 <li>Discord Bot은 Discord Inc., Riot Games, Google, GitHub 등과 제휴하거나 보증받은 서비스가 아닙니다. 모든 상표는 각 권리자의 것입니다.</li></ul></section>
@@ -169,15 +181,15 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 
 <section><h2 id="t13"><em>제13조</em>준거법과 관할</h2>
 <p>이 약관은 대한민국 법률에 따르며, 분쟁은 민사소송법에 따른 관할 법원에서 해결합니다. 약관의 일부가 무효여도 나머지 조항은 효력을 유지합니다.</p>
-<div class="box"><p><b>부칙</b> 이 약관은 2026년 11월 26일부터 시행합니다. 문의는 Discord <code>m1n._.se0</code>로 보내 주세요.</p></div></section>
+<div class="box"><p><b>부칙</b> 이 약관은 2026년 11월 26일부터 시행합니다. 문의는 Discord <code>m1n._.se0</code>로 보내 주시기 바랍니다.</p></div></section>
 </div>
 
-<!-- ══════════ 개인정보처리방침 ══════════ -->
+<!-- 개인정보처리방침 -->
 <div class="doc" id="d-p">
 <div class="tri">
-<div class="a"><h4>✅ 저장하는 것</h4><ul><li>Discord 사용자·서버 ID</li><li>기능 설정과 이용 기록</li><li>경고, 잔액, 학습, 티켓 기록</li><li>(선택) 라이엇 계정 이름·지역·PUUID</li></ul></div>
-<div class="b"><h4>🚫 저장하지 않는 것</h4><ul><li>비밀번호 (입력받지 않음)</li><li>AI에 보낸 질문 내용</li><li>일반 대화 내용</li><li>음원 파일, 전적 조회 기록</li></ul></div>
-<div class="c"><h4>🌐 외부로 가는 것</h4><ul><li>AI 질문 → AI 제공사</li><li>전적 조회 → HenrikDev</li><li>QR 로그인 → Riot</li><li>급식 → NEIS</li></ul></div></div>
+<div class="a"><h4>저장하는 항목</h4><ul><li>Discord 사용자·서버 ID</li><li>기능 설정과 이용 기록</li><li>경고, 잔액, 학습, 티켓 기록</li><li>(선택) 라이엇 계정 이름·지역·PUUID</li></ul></div>
+<div class="b"><h4>저장하지 않는 항목</h4><ul><li>비밀번호 (입력받지 않음)</li><li>AI에 보낸 질문 내용</li><li>일반 대화 내용</li><li>음원 파일, 전적 조회 기록</li></ul></div>
+<div class="c"><h4>외부로 전송되는 항목</h4><ul><li>AI 질문 → AI 제공사</li><li>전적 조회 → HenrikDev</li><li>QR 로그인 → Riot</li><li>급식 → NEIS</li></ul></div></div>
 
 <section><h2 id="p1"><em>1</em>처리하는 개인정보 항목과 보관</h2>
 <p>운영자는 「개인정보 보호법」에 따라 봇 기능에 꼭 필요한 정보만 처리합니다. 데이터는 운영자 서버의 <code>data.json</code> 파일에 저장되며, 아래 항목 외에는 저장하지 않습니다.</p>
@@ -195,23 +207,23 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 <tr><td>생일·리마인더</td><td>생일(월·일), 리마인더 내용·시각·알림 채널</td><td>알림 완료 또는 삭제 시까지</td></tr>
 <tr><td>급식</td><td>이용자가 고른 학교 정보, 결과 공개 여부</td><td>삭제 요청 시까지</td></tr>
 <tr><td>투표·환영</td><td>투표 선택, 관리자가 입력한 환영 문구</td><td>투표 종료 또는 삭제 시까지</td></tr></table></div>
-<div class="box"><p><b>메시지 내용에 대해</b> 봇은 명령어와 음악 채널 입력을 처리하려고 Discord의 메시지 내용(Message Content) 권한을 씁니다. 명령어, 음악 전용 채널, 티켓 채널 외의 일반 대화는 저장하지 않습니다.</p></div></section>
+<div class="box"><p><b>메시지 내용에 대해</b> 봇은 명령어와 음악 채널 입력을 처리하기 위해 Discord의 메시지 내용(Message Content) 권한을 사용합니다. 명령어, 음악 전용 채널, 티켓 채널 외의 일반 대화는 저장하지 않습니다.</p></div></section>
 
 <section><h2 id="p2"><em>2</em>이용 목적</h2>
 <ul><li>명령어 처리, 기능 제공, 이용자별·서버별 설정과 기록 불러오기</li>
 <li>랭킹, 경제, 학습 통계 운영</li>
 <li>부정 이용(재화 조작, 매크로, 어뷰징) 탐지와 보안 사고 대응</li>
 <li>오류 분석, 서비스 개선, 공지와 문의 응대</li></ul>
-<p>수집 목적 외로 쓰지 않으며 광고·마케팅에 쓰거나 판매하지 않습니다. 목적이 바뀌면 미리 알리고 필요하면 따로 동의를 받습니다.</p></section>
+<p>수집 목적 외로 사용하지 않으며 광고·마케팅에 활용하거나 판매하지 않습니다. 목적이 바뀌면 미리 알리고 필요한 경우 별도로 동의를 받습니다.</p></section>
 
 <section><h2 id="p3"><em>3</em>보유 기간과 파기</h2>
-<ul><li>삭제를 요청하거나 봇 안의 삭제·해제 명령어(예: 계정 연동 해제, 전체 계정 삭제)를 쓰면 해당 정보를 <b>복구할 수 없는 방법으로 지체 없이 삭제</b>합니다.</li>
+<ul><li>삭제를 요청하거나 봇 안의 삭제·해제 명령어(예: 계정 연동 해제, 전체 계정 삭제)를 사용하면 해당 정보를 <b>복구할 수 없는 방법으로 지체 없이 삭제</b>합니다.</li>
 <li>서버에서 봇이 제거되면 <b>30일 이내</b>에 그 서버의 데이터를 삭제합니다.</li>
 <li>부정 이용·보안 관련 기록은 분쟁 대응과 법령상 의무를 위해 <b>최대 1년</b> 보관할 수 있습니다.</li>
 <li>백업이 있는 경우 같은 기준으로 순차 삭제합니다.</li></ul></section>
 
 <section><h2 id="p4"><em>4</em>제3자 제공, 처리 위탁, 국외 이전</h2>
-<p>이용자 동의가 있거나 법령에 근거가 있는 경우 외에는 개인정보를 제3자에게 제공하지 않습니다. 아래 외부 서비스는 이용자가 해당 기능을 실행할 때만 호출되며, 필요한 최소한의 정보만 보냅니다.</p>
+<p>이용자 동의가 있거나 법령에 근거가 있는 경우 외에는 개인정보를 제3자에게 제공하지 않습니다. 아래 외부 서비스는 이용자가 해당 기능을 실행할 때만 호출되며, 필요한 최소한의 정보만 전송합니다.</p>
 <div class="tw"><table><tr><th>서비스(국가)</th><th>전송 정보</th><th>목적</th></tr>
 <tr><td>Groq · Google Gemini · OpenRouter (미국 등)</td><td>이용자가 입력한 AI 질문, 요약할 텍스트</td><td>AI 답변 생성 (한 곳이 바쁘면 다음 곳으로 순차 호출)</td></tr>
 <tr><td>Riot Games (미국 등)</td><td>QR 로그인 요청·승인 결과, 쿠키, 상점 조회 요청</td><td>계정 연동, 상점 조회</td></tr>
@@ -220,10 +232,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 <tr><td>NEIS 교육정보 개방 포털 (한국)</td><td>학교 이름, 학교 코드</td><td>급식 조회</td></tr>
 <tr><td>GitHub (미국)</td><td>상태 정보 숫자와 가동 기록 (제5항 참고)</td><td>공개 상태 페이지</td></tr>
 <tr><td>Discord Inc. (미국)</td><td>봇 동작에 필요한 메시지·상호작용 데이터</td><td>플랫폼 기능 제공</td></tr></table></div>
-<p>국외 이전을 원하지 않으면 해당 기능(AI, 라이엇 연동, 전적 조회)을 쓰지 않으면 됩니다. 나머지 기능에는 영향이 없습니다. 각 사업자의 처리 방침은 해당 사업자 사이트에서 확인하세요.</p></section>
+<p>국외 이전을 원하지 않는 경우 해당 기능(AI, 라이엇 연동, 전적 조회)을 사용하지 않으시면 되며, 나머지 기능에는 영향이 없습니다. 각 사업자의 처리 방침은 해당 사업자 사이트에서 확인하시기 바랍니다.</p></section>
 
 <section><h2 id="p5"><em>5</em>공개 상태 페이지 (status.json)</h2>
-<p>봇의 가동 상태를 알리려고 GitHub 저장소에 <code>status.json</code>을 주기적으로 올립니다. 이 파일은 공개되므로 <b>서버 이름, 서버 ID, 이용자 정보는 넣지 않고 숫자와 기록만</b> 담습니다.</p>
+<p>봇의 가동 상태를 알리기 위해 GitHub 저장소에 <code>status.json</code>을 주기적으로 업로드합니다. 이 파일은 공개되므로 <b>서버 이름, 서버 ID, 이용자 정보는 포함하지 않고 숫자와 기록만</b> 담습니다.</p>
 <div class="tw"><table><tr><th>구분</th><th>내용</th></tr>
 <tr><td>상태</td><td>온라인 여부, 구성요소(게이트웨이·명령어·음악) 정상 여부, 응답 지연(ping), 시작 시각</td></tr>
 <tr><td>규모(숫자)</td><td>봇이 들어간 서버 수, 전체 멤버 수 합계, 음성 연결 수, 재생 중인 서버 수</td></tr>
@@ -231,14 +243,14 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 <tr><td>통계</td><td>명령어 실행 횟수, 오류 횟수, 최근 오류 요약, 음악 성공·실패 횟수</td></tr>
 <tr><td>기록</td><td>최근 90일 일별 가동률, 최근 사고 이력(시작·종료 시각, 영향 범위)</td></tr>
 <tr><td>봇 정보</td><td>봇 이름과 프로필 이미지</td></tr></table></div>
-<p>업로드는 매번 이전 기록 없이 덮어써서 과거 파일이 쌓이지 않습니다.</p></section>
+<p>업로드는 매번 이전 기록 없이 덮어쓰므로 과거 파일이 누적되지 않습니다.</p></section>
 
 <section><h2 id="p6"><em>6</em>라이엇 계정 QR 연동 안내</h2>
-<div class="box warn"><p><b>민감한 기능이에요. 꼭 읽고 사용하세요.</b></p>
+<div class="box warn"><p><b>민감한 정보를 다루는 기능입니다. 사용 전 반드시 확인하시기 바랍니다.</b></p>
 <ul><li>연동은 <b>QR 로그인으로만</b> 가능합니다. 아이디·비밀번호를 입력받지 않으며 저장하지도 않습니다.</li>
-<li>QR은 모바일 라이엇 앱에서 <b>본인이 직접 승인</b>해야 완료됩니다. 모르는 사람이 보낸 QR은 절대 승인하지 마세요.</li>
+<li>QR은 모바일 라이엇 앱에서 <b>본인이 직접 승인</b>해야 완료됩니다. 모르는 사람이 보낸 QR은 절대 승인하지 마십시오.</li>
 <li>승인 후 받는 접근 토큰(access·entitlement)은 <b>메모리에만</b> 두며 봇이 재시작하면 사라집니다.</li>
-<li>자동 재로그인용 쿠키(ssid)는 <b>AES-256-GCM으로 암호화</b>해 저장하고, 암호화 키는 데이터 파일과 분리된 환경 변수로 관리합니다. 키가 설정되지 않은 환경에서는 쿠키 저장 기능이 꺼집니다.</li>
+<li>자동 재로그인용 쿠키(ssid)는 <b>AES-256-GCM으로 암호화</b>해 저장하고, 암호화 키는 데이터 파일과 분리된 환경 변수로 관리합니다. 키가 설정되지 않은 환경에서는 쿠키 저장 기능이 비활성화됩니다.</li>
 <li>연동 해제 명령어로 언제든 계정 정보와 쿠키를 삭제할 수 있습니다.</li></ul></div></section>
 
 <section><h2 id="p7"><em>7</em>안전성 확보 조치</h2>
@@ -254,37 +266,37 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 <p>Discord는 만 13세 이상만 가입할 수 있고, 봇은 만 14세 미만 아동의 개인정보를 의도적으로 수집하지 않습니다. 만 14세 미만으로 확인된 이용자의 정보는 법정대리인 동의가 확인되지 않으면 삭제하며, 법정대리인은 아동의 정보 열람·삭제를 요구할 수 있습니다.</p></section>
 
 <section><h2 id="p10"><em>10</em>서버 관리자가 설정하는 정보</h2>
-<p>로그 채널, 초대 로그, 티켓 기록 전송(DM 포함), 환영 메시지 같은 기능은 서버 관리자가 켜고 끕니다. 기록된 구성원 정보는 해당 서버 관리자의 책임 아래 쓰이며, 운영자는 관리자가 서버 안에서 직접 볼 수 있는 범위를 넘어 열람하지 않습니다. 웹 콘솔은 운영자가 허가한 관리자에게만 열리고, 필요한 범위의 정보만 보여 줍니다.</p></section>
+<p>로그 채널, 초대 로그, 티켓 기록 전송(DM 포함), 환영 메시지 같은 기능은 서버 관리자가 켜고 끕니다. 기록된 구성원 정보는 해당 서버 관리자의 책임 아래 사용되며, 운영자는 관리자가 서버 안에서 직접 볼 수 있는 범위를 넘어 열람하지 않습니다. 웹 콘솔은 운영자가 허가한 관리자에게만 열리고, 필요한 범위의 정보만 표시합니다.</p></section>
 
 <section><h2 id="p11"><em>11</em>개인정보 보호책임자와 권리 구제</h2>
 <div class="tw"><table><tr><th>구분</th><th>내용</th></tr><tr><td>개인정보 보호책임자</td><td>kimminseo (운영자)</td></tr><tr><td>연락처</td><td>Discord: <code>m1n._.se0</code></td></tr></table></div>
-<p>개인정보 침해로 도움이 필요하면 아래 기관에도 상담·신고할 수 있습니다.</p>
+<p>개인정보 침해로 도움이 필요한 경우 아래 기관에도 상담·신고할 수 있습니다.</p>
 <ul><li>개인정보침해 신고센터 (privacy.kisa.or.kr · 국번없이 118)</li><li>개인정보 분쟁조정위원회 (kopico.go.kr · 1833-6972)</li><li>대검찰청 사이버수사과 (spo.go.kr · 국번없이 1301)</li><li>경찰청 사이버수사국 (ecrm.police.go.kr · 국번없이 182)</li></ul></section>
 
 <section><h2 id="p12"><em>12</em>방침의 변경</h2>
-<p>법령, 기능, 외부 서비스가 바뀌면 이 방침을 고칠 수 있으며, 시행 7일 전(중요한 변경은 30일 전)에 이 페이지와 공지 채널로 알립니다. 이전 버전이 필요하면 운영자에게 요청해 주세요.</p></section>
+<p>법령, 기능, 외부 서비스가 바뀌면 이 방침을 수정할 수 있으며, 시행 7일 전(중요한 변경은 30일 전)에 이 페이지와 공지 채널로 알립니다. 이전 버전이 필요하면 운영자에게 요청해 주시기 바랍니다.</p></section>
 
 <section><h2 id="p13"><em>FAQ</em>자주 묻는 질문</h2>
-<details><summary>내 라이엇 비밀번호가 저장되나요?</summary><p>아니요. 봇은 비밀번호를 입력받지 않습니다. QR 로그인만 지원하고, 모바일 라이엇 앱에서 직접 승인해야 합니다.</p></details>
-<details><summary>AI에 물어본 내용이 저장되나요?</summary><p>질문은 답변을 만들기 위해 AI 제공사로 전송되지만 봇의 데이터 파일에는 저장하지 않습니다. 하루 사용 횟수만 집계합니다. 개인정보는 입력하지 마세요.</p></details>
+<details><summary>내 라이엇 비밀번호가 저장되나요?</summary><p>아니요. 봇은 비밀번호를 입력받지 않습니다. QR 로그인만 지원하며, 모바일 라이엇 앱에서 직접 승인해야 합니다.</p></details>
+<details><summary>AI에 물어본 내용이 저장되나요?</summary><p>질문은 답변 생성을 위해 AI 제공사로 전송되지만 봇의 데이터 파일에는 저장하지 않습니다. 하루 사용 횟수만 집계합니다. 개인정보는 입력하지 마시기 바랍니다.</p></details>
 <details><summary>채팅 내용을 다 읽나요?</summary><p>명령어와 음악 채널 입력, 티켓 채널만 처리합니다. 일반 대화를 저장하거나 분석하지 않습니다.</p></details>
-<details><summary>내 데이터를 지우고 싶어요.</summary><p>라이엇 연동은 해제 명령어로 직접 지울 수 있고, 그 밖의 정보는 Discord <code>m1n._.se0</code>로 요청하면 10일 이내에 처리합니다.</p></details>
-<details><summary>상태 페이지에 서버 이름이 공개되나요?</summary><p>아니요. 서버 수와 멤버 수 합계 같은 숫자만 공개되고 서버 이름·ID·유저 정보는 들어 있지 않습니다.</p></details></section>
+<details><summary>내 데이터를 지우고 싶습니다.</summary><p>라이엇 연동은 해제 명령어로 직접 삭제할 수 있고, 그 밖의 정보는 Discord <code>m1n._.se0</code>로 요청하면 10일 이내에 처리합니다.</p></details>
+<details><summary>상태 페이지에 서버 이름이 공개되나요?</summary><p>아니요. 서버 수와 멤버 수 합계 같은 숫자만 공개되며 서버 이름·ID·이용자 정보는 포함되지 않습니다.</p></details></section>
 </div>
 
 </main></div>
-<footer>© 2026 Discord Bot Project · 운영자 kimminseo · Discord <code>m1n._.se0</code><br>Discord Bot은 Discord Inc.와 공식 관련이 없으며, 이용자는 Discord 이용약관도 함께 지켜야 합니다.<br><a href="https://discord.com/terms" target="_blank" rel="noopener">Discord 이용약관 보기</a></footer>
+<footer><div class="fi"><a class="logo" href="#terms" aria-label="BOT.CONSOLE 약관"><svg class="lg" viewBox="0 0 64 64" aria-hidden="true"><use href="#lg"/></svg><span>BOT<b>.</b>CONSOLE</span></a><div>© 2026 Discord Bot Project · 운영자 kimminseo · Discord <code>m1n._.se0</code><br>Discord Bot은 Discord Inc.와 공식 관련이 없으며, 이용자는 Discord 이용약관도 함께 준수해야 합니다.<br><a href="https://discord.com/terms" target="_blank" rel="noopener">Discord 이용약관 보기</a></div></div></footer>
 
 <script>
 (function(){
-var D={t:{el:document.getElementById('d-t'),n:document.getElementById('n-t'),h:'이용약관',s:'봇이 어떤 기능을 제공하고, 이용자와 서버 관리자가 무엇을 지켜야 하는지 정리했어요. 사용 전에 꼭 확인해 주세요.',c:[['13개 조항','서비스, 금지 행위, 책임 범위를 순서대로 담았어요'],['서버 관리자 책임','로그·초대 추적을 켜면 구성원에게 알려야 해요'],['QR 로그인만','라이엇 연동은 비밀번호 없이 QR 승인으로만 가능해요'],['위반 시 단계별 제한','경고에서 차단까지, 이의 제기도 할 수 있어요']]},
-p:{el:document.getElementById('d-p'),n:document.getElementById('n-p'),h:'개인정보처리방침',s:'어떤 정보를 왜 처리하는지, 얼마나 보관하는지, 어떻게 삭제하는지 항목별로 정리했어요.',c:[['최소 수집','기능에 꼭 필요한 정보만 data.json에 저장해요'],['비밀번호 미수집','라이엇은 QR 로그인, 토큰은 메모리에만 둬요'],['쿠키 AES-256 암호화','자동 재로그인 쿠키는 암호화해서 저장해요'],['10일 내 삭제 처리','열람·정정·삭제 요청에 10일 안에 답해요']]}};
+var D={t:{el:document.getElementById('d-t'),n:document.getElementById('n-t'),h:'이용약관',s:'봇이 제공하는 기능과 이용자·서버 관리자가 준수해야 할 사항을 안내합니다. 이용 전에 반드시 확인하시기 바랍니다.',c:[['13개 조항','서비스, 금지 행위, 책임 범위를 순서대로 규정합니다'],['서버 관리자 책임','로그·초대 추적 기능 사용 시 구성원에게 고지해야 합니다'],['QR 로그인 방식','라이엇 연동은 비밀번호 없이 QR 승인으로만 가능합니다'],['단계별 이용 제한','경고부터 차단까지 순차 적용하며 이의 제기가 가능합니다']]},
+p:{el:document.getElementById('d-p'),n:document.getElementById('n-p'),h:'개인정보처리방침',s:'처리하는 개인정보의 항목과 목적, 보관 기간, 파기 절차를 항목별로 안내합니다.',c:[['최소 수집','기능 제공에 꼭 필요한 정보만 data.json에 저장합니다'],['비밀번호 미수집','라이엇은 QR 로그인만 지원하며 토큰은 메모리에만 보관합니다'],['쿠키 AES-256 암호화','자동 재로그인 쿠키는 암호화하여 저장합니다'],['10일 내 처리','열람·정정·삭제 요청에 10일 이내 회신합니다']]}};
 var toc=document.getElementById('toc'),io=null,sb=document.getElementById('sumbox');
 function show(){
   var id=(location.hash||'#terms').slice(1),k=/^p/.test(id)?'p':'t';
   for(var x in D){D[x].el.classList.toggle('show',x===k);D[x].n.setAttribute('aria-current',x===k)}
   document.getElementById('ttl').textContent=D[k].h;document.getElementById('sub').textContent=D[k].s;
-  document.title=D[k].h+' | Discord Bot';
+  document.title=D[k].h+' | BOT.CONSOLE';
   sb.innerHTML=D[k].c.map(function(c){return '<div><b>'+c[0]+'</b><span>'+c[1]+'</span></div>'}).join('');
   toc.innerHTML='<small>목차</small>';var hs=D[k].el.querySelectorAll('h2');
   hs.forEach(function(h){var a=document.createElement('a'),n=h.querySelector('em').textContent;a.href='#'+h.id;a.textContent=n+' '+h.childNodes[1].textContent;a.dataset.id=h.id;toc.appendChild(a)});
@@ -296,6 +308,7 @@ function show(){
 window.addEventListener('hashchange',show);show();
 var pr=document.getElementById('prog');
 addEventListener('scroll',function(){var h=document.documentElement;pr.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight||1)*100)+'%'},{passive:true});
+addEventListener('scroll',function(){document.querySelector('.top').classList.toggle('scrolled',scrollY>8)},{passive:true});
 document.getElementById('th').onclick=function(){var r=document.documentElement,d=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;r.dataset.theme=d?'light':'dark'};
 })();
 </script>
