@@ -1,158 +1,303 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Integrated Legal Notice | Syrup Bot</title>
-    <style>
-        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-        :root {
-            --bg: #0f1012;
-            --card: #1e1f22;
-            --accent: #5865f2;
-            --danger: #ff4655;
-            --text: #dbdee1;
-            --text-muted: #949ba4;
-            --border: #2f3136;
-        }
-
-        /* 부드러운 스크롤 효과 */
-        html { scroll-behavior: smooth; }
-
-        body { background: var(--bg); color: var(--text); font-family: 'Pretendard', sans-serif; line-height: 1.8; margin: 0; padding: 60px 20px; display: flex; justify-content: center; }
-        .wrapper { max-width: 950px; width: 100%; }
-        .legal-card { background: var(--card); padding: 60px; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
-        
-        header { border-bottom: 1px solid var(--border); padding-bottom: 30px; margin-bottom: 50px; }
-        header h1 { font-size: 2.5rem; color: #fff; margin: 0; font-weight: 900; }
-        .update-tag { display: inline-block; background: var(--accent); color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; margin-top: 10px; }
-
-        .toc { background: rgba(0,0,0,0.2); padding: 30px; border-radius: 8px; margin-bottom: 50px; border: 1px solid var(--border); }
-        .toc h2 { font-size: 1rem; color: var(--accent); margin-top: 0; text-transform: uppercase; }
-        .toc ul { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .toc a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: 0.2s; }
-        .toc a:hover { color: #fff; padding-left: 5px; }
-
-        section { margin-bottom: 80px; scroll-margin-top: 40px; }
-        h2.section-title { font-size: 1.5rem; color: #fff; border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-bottom: 25px; font-weight: 800; }
-        
-        h3 { font-size: 1.1rem; color: #fff; margin-top: 25px; display: flex; align-items: center; }
-        h3::before { content: "§"; color: var(--accent); margin-right: 8px; }
-
-        p, li { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 12px; text-align: justify; }
-        .bold { color: #fff; font-weight: 700; }
-        .warning { color: var(--danger); font-weight: 700; }
-
-        .law-box { background: rgba(255, 70, 85, 0.05); border: 1px solid rgba(255, 70, 85, 0.2); padding: 25px; border-radius: 8px; margin: 20px 0; }
-        .law-box strong { color: var(--danger); display: block; margin-bottom: 10px; }
-
-        .data-list { padding-left: 20px; list-style-type: square; }
-        
-        footer { text-align: center; margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.85rem; }
-        footer a { color: var(--accent); text-decoration: none; font-weight: bold; }
-        footer a:hover { text-decoration: underline; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>이용약관 및 개인정보처리방침 | Discord Bot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f5fa;--card:#fff;--ink:#12141f;--mute:#586074;--line:#e4e7f0;--acc:#5865f2;--acc2:#7c5cff;--accbg:#eef0ff;--ok:#0f9d6b;--okbg:#e8f8f1;--no:#d92d4a;--nobg:#fdecef;--warn:#b25e09;--warnbg:#fff5e6;--shadow:0 1px 2px rgba(20,24,60,.05),0 12px 32px -12px rgba(20,24,60,.12);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0c12;--card:#14161f;--ink:#eceef6;--mute:#9ba3b8;--line:#252938;--acc:#8c95ff;--accbg:#1b1e3b;--ok:#3ddc9b;--okbg:#0f2a21;--no:#ff7a90;--nobg:#2c1219;--warn:#ffb45c;--warnbg:#2b2012;--shadow:0 12px 32px -12px rgba(0,0,0,.6);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b0c12;--card:#14161f;--ink:#eceef6;--mute:#9ba3b8;--line:#252938;--acc:#8c95ff;--accbg:#1b1e3b;--ok:#3ddc9b;--okbg:#0f2a21;--no:#ff7a90;--nobg:#2c1219;--warn:#ffb45c;--warnbg:#2b2012;--shadow:0 12px 32px -12px rgba(0,0,0,.6);color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 84px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15.5px/1.9 'Noto Sans KR','Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;word-break:keep-all;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--card);z-index:30}
+#prog{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;width:0;background:linear-gradient(90deg,var(--acc),var(--acc2));z-index:40}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--card) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.bar{max-width:1180px;margin:auto;padding:0 24px;height:62px;display:flex;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:17px;letter-spacing:-.02em;margin-right:auto}
+.logo{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--acc),var(--acc2));display:grid;place-items:center;color:#fff;font-size:16px}
+nav{display:flex;gap:4px;background:var(--bg);padding:4px;border-radius:12px}nav a{padding:7px 16px;border-radius:9px;color:var(--mute);text-decoration:none;font-weight:500;font-size:14px;transition:.2s}
+nav a[aria-current=true]{background:var(--card);color:var(--acc);font-weight:700;box-shadow:var(--shadow)}
+.ib{border:1px solid var(--line);background:var(--card);color:var(--ink);width:38px;height:38px;border-radius:10px;cursor:pointer;font-size:16px}
+.hero{background:#0d0f1f;color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;width:640px;height:640px;right:-160px;top:-280px;background:radial-gradient(closest-side,rgba(124,92,255,.55),transparent);pointer-events:none}
+.hero::after{content:"";position:absolute;width:520px;height:520px;left:-200px;bottom:-320px;background:radial-gradient(closest-side,rgba(88,101,242,.4),transparent);pointer-events:none}
+.hi{max-width:1180px;margin:auto;padding:72px 24px 64px;position:relative;z-index:1}
+.pill{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);padding:6px 14px;border-radius:99px;font-size:13px;color:#c9cdf5}
+.hero h1{font-size:clamp(34px,6vw,60px);line-height:1.2;letter-spacing:-.035em;font-weight:900;margin:22px 0 18px}
+.hero p{max-width:620px;color:#b4b9d6;margin:0;font-size:16.5px}
+.sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:40px}
+.sum div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px 20px;backdrop-filter:blur(6px)}
+.sum b{display:block;font-size:15px;margin-bottom:4px;color:#fff}.sum span{font-size:13.5px;color:#aeb3d3;line-height:1.6;display:block}
+.wrap{max-width:1180px;margin:-28px auto 0;padding:0 24px 80px;display:grid;grid-template-columns:240px 1fr;gap:36px;align-items:start;position:relative;z-index:2}
+aside{position:sticky;top:calc(env(safe-area-inset-top,0px) + 86px);background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:var(--shadow);max-height:calc(100vh - 120px);overflow:auto}
+aside small{display:block;padding:4px 10px 8px;color:var(--mute);font-size:12px;font-weight:700}
+aside a{display:block;padding:7px 12px;border-radius:9px;color:var(--mute);text-decoration:none;font-size:13.5px;line-height:1.5;transition:.15s}
+aside a:hover{background:var(--bg)}aside a.on{background:var(--accbg);color:var(--acc);font-weight:700}
+main{min-width:0}.doc{display:none}.doc.show{display:block}
+section{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:34px 40px;margin-bottom:18px;box-shadow:var(--shadow)}
+h2{font-size:21px;letter-spacing:-.02em;font-weight:800;margin:0 0 16px;display:flex;align-items:center;gap:12px}
+h2 em{font-style:normal;flex:none;min-width:34px;height:34px;padding:0 10px;border-radius:10px;background:var(--accbg);color:var(--acc);font-size:14px;font-weight:700;display:grid;place-items:center}
+h3{font-size:15.5px;margin:22px 0 6px;font-weight:700}
+p,li{color:var(--mute);margin:0 0 10px}ul,ol{padding-left:22px;margin:0 0 12px}li::marker{color:var(--acc)}b{color:var(--ink)}
+.box{border-radius:14px;padding:18px 22px;margin:16px 0;background:var(--accbg)}.box>:last-child{margin-bottom:0}
+.box.warn{background:var(--warnbg)}.box.warn>b:first-child,.box.warn p:first-child b{color:var(--warn)}
+.box.ok{background:var(--okbg)}.box.no{background:var(--nobg)}
+.tri{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-bottom:18px}
+.tri div{border-radius:16px;padding:20px 22px;border:1px solid var(--line);background:var(--card);box-shadow:var(--shadow)}
+.tri h4{margin:0 0 8px;font-size:15px;display:flex;gap:8px;align-items:center}.tri ul{margin:0;padding-left:18px}.tri li{font-size:14px;margin-bottom:4px}
+.tri .a{border-top:4px solid var(--ok)}.tri .b{border-top:4px solid var(--no)}.tri .c{border-top:4px solid var(--acc)}
+.tw{overflow-x:auto;margin:14px 0 18px;border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:14px;line-height:1.7}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--mute)}
+th{background:var(--bg);color:var(--ink);font-weight:700;white-space:nowrap}tr:last-child td{border:0}td:first-child{color:var(--ink);font-weight:500;white-space:nowrap}
+code{background:var(--bg);border:1px solid var(--line);padding:1px 7px;border-radius:6px;font-size:13px;color:var(--ink)}
+details{border:1px solid var(--line);border-radius:14px;padding:0 20px;margin-bottom:10px;background:var(--card)}
+summary{cursor:pointer;padding:15px 0;font-weight:700;color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}summary::after{content:"+";color:var(--acc);font-size:20px;line-height:1.4;transition:transform .2s}details[open] summary::after{transform:rotate(45deg)}
+details p{padding-bottom:6px}
+footer{max-width:1180px;margin:0 auto;padding:0 24px 64px;color:var(--mute);font-size:13px;text-align:center;line-height:1.9}footer a{color:var(--acc)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+@media(max-width:920px){.wrap{grid-template-columns:1fr}aside{display:none}section{padding:26px 22px}.hi{padding-top:48px}}
+@media(max-width:560px){.bar{padding:0 14px}.brand span{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media print{header,aside,#prog,.hero::before,.hero::after{display:none}.hero{background:none;color:#000}.hero h1,.sum b{color:#000}.doc{display:block!important}section{box-shadow:none;break-inside:avoid}}
+</style>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="legal-card">
-            <header>
-                <h1>Terms of Service & Privacy</h1>
-                <div class="update-tag">Last Revised: 2026. 02. 07</div>
-            </header>
+<div id="prog"></div>
+<header><div class="bar"><div class="brand"><div class="logo">🤖</div><span>Discord Bot 약관 센터</span></div>
+<nav><a href="#terms" id="n-t">이용약관</a><a href="#privacy" id="n-p">개인정보처리방침</a></nav>
+<button class="ib" id="th" aria-label="테마 전환">🌓</button></div></header>
 
-            <div class="toc">
-                <h2>Table of Contents</h2>
-                <ul>
-                    <li><a href="#s1">1. 서비스 이용 승낙</a></li>
-                    <li><a href="#s2">2. 사이버 범죄 및 금지 행위</a></li>
-                    <li><a href="#s3">3. 지식재산권 및 라이선스</a></li>
-                    <li><a href="#s4">4. 개인정보 처리방침</a></li>
-                    <li><a href="#s5">5. 데이터 보유 및 파기</a></li>
-                    <li><a href="#s6">6. 시스템 보안 및 책임</a></li>
-                    <li><a href="#s7">7. 면책 고지 (DISCLAIMER)</a></li>
-                    <li><a href="#s8">8. 분쟁 해결 및 관할권</a></li>
-                </ul>
-            </div>
+<div class="hero"><div class="hi">
+<span class="pill">📜 시행일 2026. 11. 26 · 이전 버전 2026. 02. 07</span>
+<h1 id="ttl">이용약관</h1>
+<p id="sub"></p>
+<div class="sum" id="sumbox"></div>
+</div></div>
 
-            <section id="s1">
-                <h2 class="section-title">1. 서비스 이용 승낙</h2>
-                <p>본 약관은 "Discord Bot" (이하 "봇")와 이용자 간의 법적 합의입니다. 이용자가 봇의 기능을 실행하거나 서버에 초대하는 행위는 본 약관의 모든 조항 및 <span class="bold">Discord Developer Policy</span>에 무조건적으로 동의함을 의미합니다.</p>
-            </section>
+<div class="wrap"><aside id="toc" aria-label="목차"></aside><main>
 
-            <section id="s2">
-                <h2 class="section-title">2. 사이버 범죄 및 제한 행위 (Prohibited Conduct)</h2>
-                <p>운영진은 서비스의 무결성을 보호하기 위해 다음 각 호의 행위를 엄격히 금지하며, 위반 시 <span class="warning">민·형사상 법적 조치</span>를 취합니다.</p>
-                
-                <div class="law-box">
-                    <strong>2.1 해킹 및 시스템 공격</strong>
-                    <ul>
-                        <li><span class="bold">토큰 및 세션 탈취:</span> 봇의 인증 토큰을 탈취하거나 가로채려는 모든 시도.</li>
-                        <li><span class="bold">인프라 공격:</span> DDoS, DoS 공격을 통해 서비스 가용성을 방해하는 행위.</li>
-                        <li><span class="bold">취약점 악용:</span> SQL Injection, XSS, 패킷 변조 등을 통해 데이터베이스에 무단 접근하는 행위.</li>
-                    </ul>
-                    
-                    <strong>2.2 부정 이용 및 조작</strong>
-                    <ul>
-                        <li><span class="bold">자동화 도구 사용:</span> 셀프봇, 매크로, 스크립트 등을 이용해 비정상적인 데이터를 생성하는 행위.</li>
-                        <li><span class="bold">버그 악용:</span> 시스템 결함을 인지하고도 이를 보고하지 않고 부당 이득(재화 복사 등)을 취하는 행위.</li>
-                        <li><span class="bold">리버스 엔지니어링:</span> 봇의 소스코드를 추출하거나 바이너리를 분석하여 유사 기능을 구현하는 행위.</li>
-                    </ul>
+<!-- ══════════ 이용약관 ══════════ -->
+<div class="doc" id="d-t">
+<section><h2 id="t1"><em>제1조</em>목적과 정의</h2>
+<p>이 약관은 운영자(개발자 kimminseo, 이하 “운영자”)가 Discord 플랫폼에서 제공하는 Discord Bot(이하 “봇”)의 이용 조건, 운영자와 이용자의 권리·의무 및 책임 사항을 정하는 것을 목적으로 합니다.</p>
+<ul><li><b>이용자</b>: 봇이 들어 있는 서버에서 명령어, 버튼, 메뉴, 메시지 입력으로 봇을 사용하는 모든 사람</li>
+<li><b>서버 관리자</b>: 봇을 서버에 초대했거나 서버 안에서 봇의 설정을 바꿀 수 있는 사람</li>
+<li><b>가상 재화</b>: 봇 안에서만 쓰이는 코인 등의 수치 데이터</li>
+<li><b>웹 콘솔</b>: 운영자가 허가한 관리자가 웹에서 봇과 서버 상태를 확인하고 조작하는 도구</li></ul></section>
 
-                    <strong>2.3 이용자 기만 및 사칭</strong>
-                    <ul>
-                        <li><span class="bold">운영진 사칭:</span> 개발자 또는 관리자를 사칭하여 이용자의 민감 정보를 갈취하거나 기만하는 행위.</li>
-                        <li><span class="bold">사기 행위:</span> 가상 재화를 실제 현금이나 다른 서비스의 자산과 거래하는 행위(현거래 금지).</li>
-                    </ul>
-                </div>
-            </section>
+<section><h2 id="t2"><em>제2조</em>약관의 효력과 변경</h2>
+<p>봇을 서버에 초대하거나 명령어를 사용하면 이 약관과 <b>Discord 이용약관(Terms of Service)·Developer Policy</b>에 동의한 것으로 봅니다. 두 문서가 충돌하면 Discord의 정책을 우선합니다.</p>
+<p>약관을 바꿀 때는 시행 <b>7일 전</b>(이용자에게 불리한 변경은 <b>30일 전</b>)에 공지 채널 또는 이 페이지로 알립니다. 변경 후에도 계속 이용하면 동의한 것으로 보며, 동의하지 않으면 이용을 중단하고 봇을 서버에서 내보내 주세요.</p></section>
 
-            <section id="s3">
-                <h2 class="section-title">3. 지식재산권 (Intellectual Property)</h2>
-                <p>서비스 내의 모든 코드, 데이터베이스 설계, 그래픽 자산, 명칭에 대한 권리는 운영자에게 독점적으로 귀속됩니다. 이를 무단으로 복제하거나 상업적으로 재배포하는 것은 저작권법 제136조 등에 의거하여 처벌받을 수 있는 중범죄입니다.</p>
-            </section>
+<section><h2 id="t3"><em>제3조</em>제공 서비스</h2>
+<div class="tw"><table><tr><th>분류</th><th>주요 기능</th></tr>
+<tr><td>서버 관리</td><td>경고·차단·추방, 로그 채널, 환영 메시지, 초대 추적(누가 초대했는지 기록)</td></tr>
+<tr><td>음악</td><td>음악 전용 채널 패널, 재생·스킵·반복·셔플·볼륨, 스킵 투표, 조작 로그, 자동 퇴장</td></tr>
+<tr><td>경제</td><td>서버별 코인, 잔액, 도박 게임, 상점</td></tr>
+<tr><td>티켓</td><td>문의 티켓 개설, 대화 기록(트랜스크립트) 저장·전송, 평점, 블랙리스트</td></tr>
+<tr><td>스크림</td><td>발로란트 스크림 모집, 팀 구성, 맵 밴, 음성 채널 생성</td></tr>
+<tr><td>발로란트</td><td>전적 조회, 라이엇 계정 QR 연동 후 상점 조회</td></tr>
+<tr><td>학습·AI</td><td>AI 질문·요약, 디데이, 시험, 뽀모도로, 오답 노트, 학습 랭킹</td></tr>
+<tr><td>편의 기능</td><td>급식 조회, 생일, 리마인더, 투표, 팀 나누기, 뽑기</td></tr>
+<tr><td>상태 페이지</td><td>봇 가동 상태와 사고 이력을 공개 페이지로 제공</td></tr>
+<tr><td>웹 콘솔</td><td>허가된 관리자의 웹 기반 봇 관리</td></tr></table></div>
+<p>운영자는 기능을 추가·변경·중단할 수 있으며, 이용자에게 큰 영향이 있는 변경은 미리 알립니다. 점검, 천재지변, 외부 서비스(Discord, Riot, AI 제공사 등)의 장애로 서비스가 중단되거나 느려질 수 있습니다.</p></section>
 
-            <section id="s4">
-                <h2 class="section-title">4. 개인정보 처리방침 (Privacy Policy)</h2>
-                <p>본 봇은 Discord Developer Policy를 준수하며, 이용자의 권리를 보호합니다.</p>
-                <h3>4.1 수집하는 데이터 항목</h3>
-                <ul class="data-list">
-                    <li>Discord User ID 및 Guild ID (식별용)</li>
-                    <li>게임 내 진행 데이터 (레벨, 재화, 업적 등)</li>
-                    <li>명령어 사용 기록 및 타임스탬프 (보안 및 로그용)</li>
-                </ul>
-                <h3>4.2 데이터 이용 목적</h3>
-                <p>수집된 데이터는 유저 데이터 로딩, 부정 행위 탐지, 랭킹 시스템 운영 및 서비스 개선을 위해서만 제한적으로 사용됩니다.</p>
-            </section>
+<section><h2 id="t4"><em>제4조</em>이용자의 의무</h2>
+<p>이용자는 관련 법령, Discord 정책, 이 약관, 서버 규칙을 지켜야 합니다. 특히 다음을 지켜 주세요.</p>
+<ul><li>봇의 명령어는 정해진 목적과 방법으로만 사용합니다.</li>
+<li>서비스에 오류나 보안 취약점을 발견하면 악용하지 말고 운영자에게 즉시 알립니다.</li>
+<li>자신의 계정, 토큰, 연동 정보를 스스로 안전하게 관리합니다.</li>
+<li>다른 이용자의 권리와 서버의 분위기를 존중합니다.</li></ul></section>
 
-            <section id="s5">
-                <h2 class="section-title">5. 데이터 보유 및 파기</h2>
-                <p>이용자가 서비스 이용 중단을 원하거나 봇 내 삭제 명령어를 실행할 경우, 해당 이용자의 데이터는 복구가 불가능한 방법으로 즉시 파기됩니다. 단, 시스템 공격 기록 등 보안 관련 로그는 관련 법령에 따라 일정 기간 보관될 수 있습니다.</p>
-            </section>
+<section><h2 id="t5"><em>제5조</em>금지 행위</h2>
+<p>아래 행위를 하면 제11조에 따라 제한을 받을 수 있고, 위법한 경우 <b>민·형사상 책임</b>을 질 수 있습니다.</p>
+<div class="box no"><p><b>시스템 공격·침해</b></p><ul>
+<li>봇 토큰, 세션, 쿠키, API 키를 탈취하거나 시도하는 행위</li>
+<li>DoS/DDoS, 과도한 명령어 호출, 취약점을 이용한 무단 접근(SQL Injection, XSS, 패킷 변조 등)</li>
+<li>웹 콘솔·상태 페이지 등 운영 도구에 권한 없이 접근하거나 우회하는 행위</li>
+<li>소스코드, 데이터 파일을 무단으로 추출·분석해 복제하거나 배포하는 행위(리버스 엔지니어링)</li></ul>
+<p><b>부정 이용</b></p><ul>
+<li>매크로, 셀프봇, 스크립트로 재화·랭킹·학습 기록을 조작하는 행위</li>
+<li>오류(재화 복사 등)를 알고도 신고하지 않고 이익을 얻는 행위</li>
+<li>가상 재화를 현금이나 다른 서비스의 자산과 거래하는 행위(현금 거래 금지)</li>
+<li>다계정을 이용해 보상·투표·랭킹을 부정하게 얻는 행위</li></ul>
+<p><b>타인 권리 침해</b></p><ul>
+<li>타인의 라이엇 계정을 동의 없이 연동하거나 QR 승인을 요구·유도하는 행위</li>
+<li>운영진을 사칭하거나 이용자를 속여 정보를 얻는 행위</li>
+<li>AI 기능에 타인의 개인정보, 주민등록번호, 비밀번호 등 민감한 정보를 입력하는 행위</li>
+<li>괴롭힘, 혐오 표현, 불법 촬영물, 성적·폭력적 콘텐츠를 봇으로 퍼뜨리는 행위</li></ul></div></section>
 
-            <section id="s6">
-                <h2 class="section-title">6. 시스템 보안 및 책임</h2>
-                <p>운영진은 24시간 모니터링을 통해 서비스 보안을 유지하기 위해 노력합니다. 그러나 이용자의 부주의(토큰 노출, 악성 스크립트 실행 등)로 인해 발생하는 계정 피해에 대해서는 운영진이 책임지지 않습니다.</p>
-            </section>
+<section><h2 id="t6"><em>제6조</em>서버 관리자의 책임</h2>
+<p>서버 관리자가 로그, 초대 추적, 티켓 기록, 환영 메시지 같은 기능을 켜면 그 서버 구성원의 정보가 처리됩니다. 관리자는 구성원에게 이 사실을 알려야 하고, 기능으로 얻은 정보를 법령과 서버 목적에 맞게만 써야 합니다. 얻은 정보를 외부에 공개하거나 목적 외로 쓰면 안 됩니다.</p>
+<p>관리자가 설정한 내용으로 생긴 문제에 대해서는 운영자가 책임지지 않습니다. 관리자는 봇이 일하는 데 필요한 최소 권한(서버 관리, 메시지 관리 등)만 부여해 주세요.</p></section>
 
-            <section id="s7">
-                <h2 class="section-title">7. 면책 고지 (DISCLAIMER)</h2>
-                <p class="bold" style="text-transform: uppercase;">본 서비스는 "있는 그대로(AS IS)" 제공됩니다. 운영자는 서버 장애, Discord API 업데이트, 천재지변 등으로 인한 데이터 손실에 대해 법적 책임을 지지 않습니다. 모든 가상 재화는 실질적 가치가 없는 디지털 데이터일 뿐입니다.</p>
-            </section>
+<section><h2 id="t7"><em>제7조</em>가상 재화와 이용자 콘텐츠</h2>
+<ul><li>코인 등 가상 재화는 재산적 가치가 없는 서비스 내 데이터입니다. 환불, 현금화, 양도(허용된 기능 제외)를 할 수 없습니다.</li>
+<li>재화와 기록은 서버마다 따로 관리되며, 봇이 서버에서 제거되면 그 서버의 데이터는 삭제될 수 있습니다.</li>
+<li>운영자는 부정 이용이 확인되면 재화를 회수·초기화할 수 있습니다.</li>
+<li>이용자가 입력한 질문, 메모, 닉네임 등의 권리는 이용자에게 있으며, 운영자는 서비스 제공에 필요한 범위에서만 처리합니다.</li></ul></section>
 
-            <section id="s8">
-                <h2 class="section-title">8. 준거법 및 관할</h2>
-                <p>본 약관과 관련된 분쟁은 대한민국 법률을 준거법으로 하며, 분쟁 발생 시 운영자의 거주지를 관할하는 법원을 전용 관할 법원으로 합니다.</p>
-            </section>
+<section><h2 id="t8"><em>제8조</em>AI 기능과 외부 서비스</h2>
+<ul><li><b>AI 답변</b>은 외부 AI 서비스가 만들며 부정확하거나 오래된 내용일 수 있습니다. 시험, 의료, 법률, 금융 같은 중요한 판단의 근거로 삼지 마세요.</li>
+<li><b>라이엇 계정 연동</b>은 이용자가 직접 선택하는 기능이며 <b>QR 로그인으로만</b> 이루어집니다. 모바일 라이엇 앱에서 본인이 직접 승인해야 하며, 연동에 따른 라이엇 정책상 불이익은 이용자 본인이 부담합니다.</li>
+<li><b>전적·급식 등</b> 외부 데이터는 제공처의 사정으로 늦거나 틀릴 수 있습니다.</li>
+<li>Discord Bot은 Discord Inc., Riot Games, Google, GitHub 등과 제휴하거나 보증받은 서비스가 아닙니다. 모든 상표는 각 권리자의 것입니다.</li></ul></section>
 
-            <footer>
-                © 2026 Discord Bot PROJECT.<br>
-                본 봇은 Discord Terms of Service를 철저히 준수하며, 본 봇의 사용자도 Discord Terms of Service (이하 ToS)를 준수하여야 합니다.<br>
-                <a href="https://discord.com/terms" target="_blank">디스코드 ToS 전문 바로가기</a> <br><br>
-                본 봇은 Discord Inc.와 공식적인 관련이 없으며 사용자는 스스로의 책임하에 서비스를 이용합니다.<br>
-                <span style="font-size: 0.75rem; opacity: 0.6;">[ By kimminseo, discord : m1n._.se0 ]</span>
-            </footer>
-        </div>
-    </div>
+<section><h2 id="t9"><em>제9조</em>음악 기능과 저작권</h2>
+<p>음악 기능은 이용자가 요청한 곡을 음성 채널에서 재생해 줄 뿐이며, 곡의 저작권과 이용 권한은 이용자와 서버 관리자가 확인해야 합니다. 저작권자의 요청이 있거나 위법한 이용이 의심되면 운영자는 해당 기능을 제한할 수 있습니다. 봇은 음원 파일을 저장하거나 배포하지 않습니다.</p></section>
+
+<section><h2 id="t10"><em>제10조</em>지식재산권</h2>
+<p>봇의 소스코드, 데이터베이스 설계, 이미지, 명칭에 대한 권리는 운영자에게 있습니다. 운영자의 서면 동의 없이 복제, 수정, 배포, 상업적 이용을 할 수 없으며, 위반하면 저작권법 등에 따라 책임을 질 수 있습니다. discord.js, yt-dlp 같은 오픈소스 구성요소는 각각의 라이선스를 따릅니다.</p></section>
+
+<section><h2 id="t11"><em>제11조</em>이용 제한과 이의 제기</h2>
+<p>제5조를 위반하면 운영자는 <b>경고 → 기능 제한 → 봇 사용 차단(이용자 또는 서버 단위) → 데이터 삭제</b> 순으로 조치할 수 있습니다. 해킹, 토큰 탈취, 사기처럼 중대한 위반은 사전 경고 없이 바로 제한할 수 있습니다.</p>
+<p>제한에 이의가 있으면 Discord로 연락해 소명할 수 있고, 운영자는 합리적인 기간 안에 검토 결과를 알립니다.</p></section>
+
+<section><h2 id="t12"><em>제12조</em>책임의 제한</h2>
+<p>서비스는 “있는 그대로” 제공됩니다. 운영자는 고의 또는 중대한 과실이 없는 한 다음 사유로 생긴 손해에 책임지지 않습니다.</p>
+<ul><li>서버 장애, Discord·외부 API의 변경이나 중단, 천재지변</li>
+<li>이용자의 부주의(토큰·쿠키·QR 승인 노출 등)</li>
+<li>서버 관리자의 설정이나 조치</li>
+<li>AI 답변, 외부 데이터의 오류</li></ul>
+<p>법령상 배제할 수 없는 책임은 그대로 집니다.</p></section>
+
+<section><h2 id="t13"><em>제13조</em>준거법과 관할</h2>
+<p>이 약관은 대한민국 법률에 따르며, 분쟁은 민사소송법에 따른 관할 법원에서 해결합니다. 약관의 일부가 무효여도 나머지 조항은 효력을 유지합니다.</p>
+<div class="box"><p><b>부칙</b> 이 약관은 2026년 11월 26일부터 시행합니다. 문의는 Discord <code>m1n._.se0</code>로 보내 주세요.</p></div></section>
+</div>
+
+<!-- ══════════ 개인정보처리방침 ══════════ -->
+<div class="doc" id="d-p">
+<div class="tri">
+<div class="a"><h4>✅ 저장하는 것</h4><ul><li>Discord 사용자·서버 ID</li><li>기능 설정과 이용 기록</li><li>경고, 잔액, 학습, 티켓 기록</li><li>(선택) 라이엇 계정 이름·지역·PUUID</li></ul></div>
+<div class="b"><h4>🚫 저장하지 않는 것</h4><ul><li>비밀번호 (입력받지 않음)</li><li>AI에 보낸 질문 내용</li><li>일반 대화 내용</li><li>음원 파일, 전적 조회 기록</li></ul></div>
+<div class="c"><h4>🌐 외부로 가는 것</h4><ul><li>AI 질문 → AI 제공사</li><li>전적 조회 → HenrikDev</li><li>QR 로그인 → Riot</li><li>급식 → NEIS</li></ul></div></div>
+
+<section><h2 id="p1"><em>1</em>처리하는 개인정보 항목과 보관</h2>
+<p>운영자는 「개인정보 보호법」에 따라 봇 기능에 꼭 필요한 정보만 처리합니다. 데이터는 운영자 서버의 <code>data.json</code> 파일에 저장되며, 아래 항목 외에는 저장하지 않습니다.</p>
+<div class="tw"><table><tr><th>기능</th><th>처리 항목</th><th>보관</th></tr>
+<tr><td>공통</td><td>Discord 사용자 ID, 서버(길드) ID, 채널·역할 ID, 명령어 실행·오류 기록</td><td>이용 기간 동안</td></tr>
+<tr><td>서버 관리</td><td>경고 기록, 로그 채널 설정, 차단·추방 사유와 처리자</td><td>서버가 삭제를 요청하거나 봇을 제거할 때까지</td></tr>
+<tr><td>초대 추적</td><td>초대 코드, 초대자 ID, 입장자 ID, 입장·퇴장 시각, 초대자별 누적·퇴장 횟수</td><td>서버가 봇을 제거할 때까지</td></tr>
+<tr><td>음악</td><td>재생 요청자, 곡 제목·URL, 볼륨, 조작 로그 (대기열은 메모리에만 있어 재시작하면 사라짐)</td><td>대기열은 즉시 삭제, 설정은 이용 기간</td></tr>
+<tr><td>경제</td><td>코인 잔액, 상점 설정·구매</td><td>이용 기간 동안</td></tr>
+<tr><td>티켓</td><td>개설자·담당자, 개설 사유, 대화 기록과 첨부파일 링크, 평점, 블랙리스트</td><td>종료 후 로그 채널·DM으로 전송된 기록은 해당 채널 정책에 따름</td></tr>
+<tr><td>스크림</td><td>참가자 ID, 팀·맵 선택, 생성한 음성 채널 ID</td><td>이용 기간 동안</td></tr>
+<tr><td>발로란트 전적</td><td>조회한 닉네임#태그, 지역 (요청할 때 외부 API로 전송만 함)</td><td>저장하지 않음</td></tr>
+<tr><td>라이엇 연동</td><td>계정 이름, 지역, PUUID, 기본 계정 선택값, 자동 재로그인용 <b>암호화된 쿠키(ssid)</b></td><td>연동 해제 또는 삭제 요청 시까지</td></tr>
+<tr><td>학습·AI</td><td>디데이·시험·오답 노트, 학습 시간·랭킹, 일일 AI 사용 횟수</td><td>사용 횟수는 하루(KST) 단위로 초기화, 나머지는 이용 기간</td></tr>
+<tr><td>생일·리마인더</td><td>생일(월·일), 리마인더 내용·시각·알림 채널</td><td>알림 완료 또는 삭제 시까지</td></tr>
+<tr><td>급식</td><td>이용자가 고른 학교 정보, 결과 공개 여부</td><td>삭제 요청 시까지</td></tr>
+<tr><td>투표·환영</td><td>투표 선택, 관리자가 입력한 환영 문구</td><td>투표 종료 또는 삭제 시까지</td></tr></table></div>
+<div class="box"><p><b>메시지 내용에 대해</b> 봇은 명령어와 음악 채널 입력을 처리하려고 Discord의 메시지 내용(Message Content) 권한을 씁니다. 명령어, 음악 전용 채널, 티켓 채널 외의 일반 대화는 저장하지 않습니다.</p></div></section>
+
+<section><h2 id="p2"><em>2</em>이용 목적</h2>
+<ul><li>명령어 처리, 기능 제공, 이용자별·서버별 설정과 기록 불러오기</li>
+<li>랭킹, 경제, 학습 통계 운영</li>
+<li>부정 이용(재화 조작, 매크로, 어뷰징) 탐지와 보안 사고 대응</li>
+<li>오류 분석, 서비스 개선, 공지와 문의 응대</li></ul>
+<p>수집 목적 외로 쓰지 않으며 광고·마케팅에 쓰거나 판매하지 않습니다. 목적이 바뀌면 미리 알리고 필요하면 따로 동의를 받습니다.</p></section>
+
+<section><h2 id="p3"><em>3</em>보유 기간과 파기</h2>
+<ul><li>삭제를 요청하거나 봇 안의 삭제·해제 명령어(예: 계정 연동 해제, 전체 계정 삭제)를 쓰면 해당 정보를 <b>복구할 수 없는 방법으로 지체 없이 삭제</b>합니다.</li>
+<li>서버에서 봇이 제거되면 <b>30일 이내</b>에 그 서버의 데이터를 삭제합니다.</li>
+<li>부정 이용·보안 관련 기록은 분쟁 대응과 법령상 의무를 위해 <b>최대 1년</b> 보관할 수 있습니다.</li>
+<li>백업이 있는 경우 같은 기준으로 순차 삭제합니다.</li></ul></section>
+
+<section><h2 id="p4"><em>4</em>제3자 제공, 처리 위탁, 국외 이전</h2>
+<p>이용자 동의가 있거나 법령에 근거가 있는 경우 외에는 개인정보를 제3자에게 제공하지 않습니다. 아래 외부 서비스는 이용자가 해당 기능을 실행할 때만 호출되며, 필요한 최소한의 정보만 보냅니다.</p>
+<div class="tw"><table><tr><th>서비스(국가)</th><th>전송 정보</th><th>목적</th></tr>
+<tr><td>Groq · Google Gemini · OpenRouter (미국 등)</td><td>이용자가 입력한 AI 질문, 요약할 텍스트</td><td>AI 답변 생성 (한 곳이 바쁘면 다음 곳으로 순차 호출)</td></tr>
+<tr><td>Riot Games (미국 등)</td><td>QR 로그인 요청·승인 결과, 쿠키, 상점 조회 요청</td><td>계정 연동, 상점 조회</td></tr>
+<tr><td>HenrikDev API (해외)</td><td>닉네임, 태그, 지역</td><td>발로란트 전적 조회</td></tr>
+<tr><td>valorant-api.com (해외)</td><td>개인정보 없음 (공개 이미지·게임 정보 요청)</td><td>에이전트·티어·카드 이미지</td></tr>
+<tr><td>NEIS 교육정보 개방 포털 (한국)</td><td>학교 이름, 학교 코드</td><td>급식 조회</td></tr>
+<tr><td>GitHub (미국)</td><td>상태 정보 숫자와 가동 기록 (제5항 참고)</td><td>공개 상태 페이지</td></tr>
+<tr><td>Discord Inc. (미국)</td><td>봇 동작에 필요한 메시지·상호작용 데이터</td><td>플랫폼 기능 제공</td></tr></table></div>
+<p>국외 이전을 원하지 않으면 해당 기능(AI, 라이엇 연동, 전적 조회)을 쓰지 않으면 됩니다. 나머지 기능에는 영향이 없습니다. 각 사업자의 처리 방침은 해당 사업자 사이트에서 확인하세요.</p></section>
+
+<section><h2 id="p5"><em>5</em>공개 상태 페이지 (status.json)</h2>
+<p>봇의 가동 상태를 알리려고 GitHub 저장소에 <code>status.json</code>을 주기적으로 올립니다. 이 파일은 공개되므로 <b>서버 이름, 서버 ID, 이용자 정보는 넣지 않고 숫자와 기록만</b> 담습니다.</p>
+<div class="tw"><table><tr><th>구분</th><th>내용</th></tr>
+<tr><td>상태</td><td>온라인 여부, 구성요소(게이트웨이·명령어·음악) 정상 여부, 응답 지연(ping), 시작 시각</td></tr>
+<tr><td>규모(숫자)</td><td>봇이 들어간 서버 수, 전체 멤버 수 합계, 음성 연결 수, 재생 중인 서버 수</td></tr>
+<tr><td>시스템</td><td>메모리 사용량, Node.js 버전</td></tr>
+<tr><td>통계</td><td>명령어 실행 횟수, 오류 횟수, 최근 오류 요약, 음악 성공·실패 횟수</td></tr>
+<tr><td>기록</td><td>최근 90일 일별 가동률, 최근 사고 이력(시작·종료 시각, 영향 범위)</td></tr>
+<tr><td>봇 정보</td><td>봇 이름과 프로필 이미지</td></tr></table></div>
+<p>업로드는 매번 이전 기록 없이 덮어써서 과거 파일이 쌓이지 않습니다.</p></section>
+
+<section><h2 id="p6"><em>6</em>라이엇 계정 QR 연동 안내</h2>
+<div class="box warn"><p><b>민감한 기능이에요. 꼭 읽고 사용하세요.</b></p>
+<ul><li>연동은 <b>QR 로그인으로만</b> 가능합니다. 아이디·비밀번호를 입력받지 않으며 저장하지도 않습니다.</li>
+<li>QR은 모바일 라이엇 앱에서 <b>본인이 직접 승인</b>해야 완료됩니다. 모르는 사람이 보낸 QR은 절대 승인하지 마세요.</li>
+<li>승인 후 받는 접근 토큰(access·entitlement)은 <b>메모리에만</b> 두며 봇이 재시작하면 사라집니다.</li>
+<li>자동 재로그인용 쿠키(ssid)는 <b>AES-256-GCM으로 암호화</b>해 저장하고, 암호화 키는 데이터 파일과 분리된 환경 변수로 관리합니다. 키가 설정되지 않은 환경에서는 쿠키 저장 기능이 꺼집니다.</li>
+<li>연동 해제 명령어로 언제든 계정 정보와 쿠키를 삭제할 수 있습니다.</li></ul></div></section>
+
+<section><h2 id="p7"><em>7</em>안전성 확보 조치</h2>
+<ul><li><b>관리적 조치</b>: 운영자 외 접근 금지, 권한 최소화, 봇 토큰·API 키는 소스코드가 아닌 환경 변수로 관리</li>
+<li><b>기술적 조치</b>: 민감 정보 암호화, 웹 콘솔 연동 시 비밀 키 인증과 허가된 관리자 확인, 외부 요청 제한 시간 설정, 공개 파일에 개인정보 미포함</li>
+<li><b>사고 대응</b>: 유출을 알게 되면 지체 없이 원인을 차단하고, 영향받는 이용자에게 알리고, 법령이 정한 기관에 신고합니다.</li></ul></section>
+
+<section><h2 id="p8"><em>8</em>이용자의 권리와 행사 방법</h2>
+<p>이용자는 언제든지 자신의 정보에 대해 <b>열람, 정정, 삭제, 처리 정지, 동의 철회</b>를 요구할 수 있습니다. 아래 연락처로 Discord 사용자 ID와 요청 내용을 보내면 본인 확인 후 <b>10일 이내</b>에 결과를 알립니다.</p>
+<p>법령상 보관해야 하는 정보는 그 사유를 알려 드리고, 대리인이 요청할 때는 위임 사실을 확인한 뒤 처리합니다.</p></section>
+
+<section><h2 id="p9"><em>9</em>만 14세 미만 아동</h2>
+<p>Discord는 만 13세 이상만 가입할 수 있고, 봇은 만 14세 미만 아동의 개인정보를 의도적으로 수집하지 않습니다. 만 14세 미만으로 확인된 이용자의 정보는 법정대리인 동의가 확인되지 않으면 삭제하며, 법정대리인은 아동의 정보 열람·삭제를 요구할 수 있습니다.</p></section>
+
+<section><h2 id="p10"><em>10</em>서버 관리자가 설정하는 정보</h2>
+<p>로그 채널, 초대 로그, 티켓 기록 전송(DM 포함), 환영 메시지 같은 기능은 서버 관리자가 켜고 끕니다. 기록된 구성원 정보는 해당 서버 관리자의 책임 아래 쓰이며, 운영자는 관리자가 서버 안에서 직접 볼 수 있는 범위를 넘어 열람하지 않습니다. 웹 콘솔은 운영자가 허가한 관리자에게만 열리고, 필요한 범위의 정보만 보여 줍니다.</p></section>
+
+<section><h2 id="p11"><em>11</em>개인정보 보호책임자와 권리 구제</h2>
+<div class="tw"><table><tr><th>구분</th><th>내용</th></tr><tr><td>개인정보 보호책임자</td><td>kimminseo (운영자)</td></tr><tr><td>연락처</td><td>Discord: <code>m1n._.se0</code></td></tr></table></div>
+<p>개인정보 침해로 도움이 필요하면 아래 기관에도 상담·신고할 수 있습니다.</p>
+<ul><li>개인정보침해 신고센터 (privacy.kisa.or.kr · 국번없이 118)</li><li>개인정보 분쟁조정위원회 (kopico.go.kr · 1833-6972)</li><li>대검찰청 사이버수사과 (spo.go.kr · 국번없이 1301)</li><li>경찰청 사이버수사국 (ecrm.police.go.kr · 국번없이 182)</li></ul></section>
+
+<section><h2 id="p12"><em>12</em>방침의 변경</h2>
+<p>법령, 기능, 외부 서비스가 바뀌면 이 방침을 고칠 수 있으며, 시행 7일 전(중요한 변경은 30일 전)에 이 페이지와 공지 채널로 알립니다. 이전 버전이 필요하면 운영자에게 요청해 주세요.</p></section>
+
+<section><h2 id="p13"><em>FAQ</em>자주 묻는 질문</h2>
+<details><summary>내 라이엇 비밀번호가 저장되나요?</summary><p>아니요. 봇은 비밀번호를 입력받지 않습니다. QR 로그인만 지원하고, 모바일 라이엇 앱에서 직접 승인해야 합니다.</p></details>
+<details><summary>AI에 물어본 내용이 저장되나요?</summary><p>질문은 답변을 만들기 위해 AI 제공사로 전송되지만 봇의 데이터 파일에는 저장하지 않습니다. 하루 사용 횟수만 집계합니다. 개인정보는 입력하지 마세요.</p></details>
+<details><summary>채팅 내용을 다 읽나요?</summary><p>명령어와 음악 채널 입력, 티켓 채널만 처리합니다. 일반 대화를 저장하거나 분석하지 않습니다.</p></details>
+<details><summary>내 데이터를 지우고 싶어요.</summary><p>라이엇 연동은 해제 명령어로 직접 지울 수 있고, 그 밖의 정보는 Discord <code>m1n._.se0</code>로 요청하면 10일 이내에 처리합니다.</p></details>
+<details><summary>상태 페이지에 서버 이름이 공개되나요?</summary><p>아니요. 서버 수와 멤버 수 합계 같은 숫자만 공개되고 서버 이름·ID·유저 정보는 들어 있지 않습니다.</p></details></section>
+</div>
+
+</main></div>
+<footer>© 2026 Discord Bot Project · 운영자 kimminseo · Discord <code>m1n._.se0</code><br>Discord Bot은 Discord Inc.와 공식 관련이 없으며, 이용자는 Discord 이용약관도 함께 지켜야 합니다.<br><a href="https://discord.com/terms" target="_blank" rel="noopener">Discord 이용약관 보기</a></footer>
+
+<script>
+(function(){
+var D={t:{el:document.getElementById('d-t'),n:document.getElementById('n-t'),h:'이용약관',s:'봇이 어떤 기능을 제공하고, 이용자와 서버 관리자가 무엇을 지켜야 하는지 정리했어요. 사용 전에 꼭 확인해 주세요.',c:[['13개 조항','서비스, 금지 행위, 책임 범위를 순서대로 담았어요'],['서버 관리자 책임','로그·초대 추적을 켜면 구성원에게 알려야 해요'],['QR 로그인만','라이엇 연동은 비밀번호 없이 QR 승인으로만 가능해요'],['위반 시 단계별 제한','경고에서 차단까지, 이의 제기도 할 수 있어요']]},
+p:{el:document.getElementById('d-p'),n:document.getElementById('n-p'),h:'개인정보처리방침',s:'어떤 정보를 왜 처리하는지, 얼마나 보관하는지, 어떻게 삭제하는지 항목별로 정리했어요.',c:[['최소 수집','기능에 꼭 필요한 정보만 data.json에 저장해요'],['비밀번호 미수집','라이엇은 QR 로그인, 토큰은 메모리에만 둬요'],['쿠키 AES-256 암호화','자동 재로그인 쿠키는 암호화해서 저장해요'],['10일 내 삭제 처리','열람·정정·삭제 요청에 10일 안에 답해요']]}};
+var toc=document.getElementById('toc'),io=null,sb=document.getElementById('sumbox');
+function show(){
+  var id=(location.hash||'#terms').slice(1),k=/^p/.test(id)?'p':'t';
+  for(var x in D){D[x].el.classList.toggle('show',x===k);D[x].n.setAttribute('aria-current',x===k)}
+  document.getElementById('ttl').textContent=D[k].h;document.getElementById('sub').textContent=D[k].s;
+  document.title=D[k].h+' | Discord Bot';
+  sb.innerHTML=D[k].c.map(function(c){return '<div><b>'+c[0]+'</b><span>'+c[1]+'</span></div>'}).join('');
+  toc.innerHTML='<small>목차</small>';var hs=D[k].el.querySelectorAll('h2');
+  hs.forEach(function(h){var a=document.createElement('a'),n=h.querySelector('em').textContent;a.href='#'+h.id;a.textContent=n+' '+h.childNodes[1].textContent;a.dataset.id=h.id;toc.appendChild(a)});
+  if(io)io.disconnect();
+  io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)toc.querySelectorAll('a').forEach(function(a){a.classList.toggle('on',a.dataset.id===e.target.id)})})},{rootMargin:'-90px 0px -70% 0px'});
+  hs.forEach(function(h){io.observe(h)});
+  if(/^(terms|privacy)$/.test(id))window.scrollTo(0,0);
+}
+window.addEventListener('hashchange',show);show();
+var pr=document.getElementById('prog');
+addEventListener('scroll',function(){var h=document.documentElement;pr.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight||1)*100)+'%'},{passive:true});
+document.getElementById('th').onclick=function(){var r=document.documentElement,d=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;r.dataset.theme=d?'light':'dark'};
+})();
+</script>
 </body>
 </html>
